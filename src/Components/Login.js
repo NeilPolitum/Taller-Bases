@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Login() {
   const navigate = useNavigate();
-  const baseURL = "localhost:3080/empleado/"
+  const baseURL = "http://localhost:3080/empleado/login"
 
   const [datos, setDatos] = useState({
     correo: '',
@@ -21,13 +21,7 @@ function Login() {
 
   const enviarDatos = (event) => {
     event.preventDefault();
-    
-    axios.post(baseURL, {
-      title: "Mandando datos",
-      body: datos
-    }).then((response) => console.log("correcto"));
-
-    navigate('/info',{state:{correo: datos.correo}});
+    axios.post(baseURL, datos).then((response) => navigate('/info',{state:{correo: datos.correo}}));
   }
   
 
@@ -36,7 +30,7 @@ function Login() {
       <div className='login'>
         <h1>Iniciar Sesión</h1>
         <input className='boton' type="text" placeholder='Correo' onChange={handleDatos} name="correo" />
-        <input className='boton' type="password" placeholder='Contraseña' onChange={handleDatos} name="contrasena" />
+        <input className='boton' type="password" placeholder='Contraseña' onChange={handleDatos} name="clave" />
         <button type="submit" className='boton'>Enviar</button>
       </div>
     </form>
