@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    background: purple;
+}
+
+.enlaces {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+li {
+    color: black;
+    font-family: Cursive;
+    font-size: 200%;
+}
+
+.login {
+    font-family: Cursive;
+    padding: 5%;
+    justify-content: center;
+    align-items: center;
+    display:grid;
+}
+
+.boton {
+    margin-top: 5%;
+}
